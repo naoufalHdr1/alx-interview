@@ -76,8 +76,8 @@ def pascal_triangle(n):
 
 ## Resources
 
-[What is Pascal’s Triangle] (https://intranet.alxswe.com/rltoken/F458nFkW9StJum2zPI4khg)/
-[Pascal’s Triangle - Numberphile] (https://intranet.alxswe.com/rltoken/XXMN2RVCCGcF5l5ZnUIv8Q)/
+[What is Pascal’s Triangle] (https://intranet.alxswe.com/rltoken/F458nFkW9StJum2zPI4khg) /
+[Pascal’s Triangle - Numberphile] (https://intranet.alxswe.com/rltoken/XXMN2RVCCGcF5l5ZnUIv8Q) /
 [What are Python Algorithms] (https://intranet.alxswe.com/rltoken/q5v0xbgrVxG4Nf-fV-BW2w)
 
 ## License
