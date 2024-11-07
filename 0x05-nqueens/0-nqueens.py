@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module solves the N Queens problem, where the goal is to place
+N queens on an NxN chessboard such that no two queens can attack each other.
+"""
 import sys
 
 
@@ -13,10 +17,11 @@ def print_solution(board):
 def is_safe(board, row, col):
     """Checks if a queen can be placed at board[row][col]."""
     for i in range(row):
-        if (board[i] == col or
-            board[i] - i == col - row or
-            board[i] + i == col + row
-        ):
+        if (
+                board[i] == col or
+                board[i] - i == col - row or
+                board[i] + i == col + row
+           ):
             return False
     return True
 
