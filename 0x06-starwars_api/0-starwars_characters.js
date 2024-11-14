@@ -11,10 +11,10 @@ const request = require('request');
 
 /**
  * Fetches and displays character names from the Star Wars API based on a given movie ID.
- * 
+ *
  * @param {string} movieId - The ID of the Star Wars movie.
  */
-function fetchAndDisplayCharacters(movieId) {
+function fetchAndDisplayCharacters (movieId) {
   const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
   request(apiUrl, (error, response, body) => {
@@ -36,20 +36,20 @@ function fetchAndDisplayCharacters(movieId) {
 
 /**
  * Fetches and displays each character's name in order as listed in the character URLs.
- * 
+ *
  * @param {Array<string>} characterUrls - Array of URLs for each character.
  */
-function displayCharactersInOrder(characterUrls) {
+function displayCharactersInOrder (characterUrls) {
   const characterPromises = characterUrls.map((url) => {
     return new Promise((resolve, reject) => {
       request(url, (error, response, body) => {
         if (error) {
-          reject(error);
+          reject(new Error(error));
         } else if (response.statusCode === 200) {
           const characterData = JSON.parse(body);
           resolve(characterData.name);
         } else {
-          reject(`Error: Received status code ${response.statusCode} for ${url}`);
+          reject(new Error(`Error: Received status code ${response.statusCode} for ${url}`));
         }
       });
     });
@@ -59,7 +59,7 @@ function displayCharactersInOrder(characterUrls) {
     .then((characterNames) => {
       characterNames.forEach((name) => console.log(name));
     })
-    .catch((error) => console.error('Error:', error));
+    .catch((error) => console.error('Error:', error.message));
 }
 
 // Parse command-line arguments
