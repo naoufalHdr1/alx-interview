@@ -50,7 +50,7 @@ def isWinner(x: int, nums: List[int]) -> Optional[str]:
         nums (List[int]): List of integers, one for each round.
 
     Returns:
-        Optional[str]: "Maria" if Maria wins, "Ben" if Ben wins, or None if it's a tie.
+        Optional[str]: the winner , or None if it's a tie.
     """
     if not nums or x < 1:
         return None
